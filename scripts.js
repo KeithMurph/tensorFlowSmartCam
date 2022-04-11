@@ -7,6 +7,7 @@ const enableWebcamButton = document.getElementById('webcamButton');
 // Check if webcam access is supported.
 function getUserMediaSupported() {
   return !!(navigator.mediaDevices &&
+
     navigator.mediaDevices.getUserMedia);
 }
 
@@ -15,7 +16,9 @@ function getUserMediaSupported() {
 // define in the next step.
 if (getUserMediaSupported()) {
   enableWebcamButton.addEventListener('click', enableCam);
-} else {
+
+}
+ else {
   console.warn('getUserMedia() is not supported by your browser');
 }
 
@@ -31,7 +34,9 @@ function enableCam(event) {
   
   // getUsermedia parameters to force video but not audio.
   const constraints = {
+    facingMode: 'environment',
     video: true
+
   };
 
   // Activate the webcam stream.
