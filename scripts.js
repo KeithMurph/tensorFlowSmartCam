@@ -34,7 +34,7 @@ function enableCam(event) {
   
   // getUsermedia parameters to force video but not audio.
   const constraints = {
-    facingMode: 'environment',
+    facingMode: {exact: 'environment'},
     video: true
 
   };
